@@ -17,21 +17,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider
+    <ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${font.className}`}
+      >
+        <ThemeProvider
       attribute="class"
       defaultTheme="dark"
       enableSystem
       disableTransitionOnChange
     >
-    <ClerkProvider>
-    <html lang="en">
-      <body
-        className={`${font.className}`}
-      >
         {children}
+        </ThemeProvider>
       </body>
     </html>
     </ClerkProvider>
-    </ThemeProvider>
   );
 }
